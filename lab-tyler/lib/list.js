@@ -23,13 +23,36 @@ class List {
         return lastI;
     }
 
-    toArray() {
-        let array = [];
-        //start at 0; finish at end(length)
-        for (let i = 0; i < array.length; i++) {
-            array[i] = this[i];
+    // toArray() {
+    //     let array = [];
+    //     //start at 0; finish at end(length)
+    //     for (let i = 0; i < array.length; i++) {
+    //         array[i] = this[i];
+    //     }
+    //     return array;
+    // }
+    forEach(element2) {
+        for (let i = 0; i < this.length; i++) {
+            element2(this[i]);
         }
-        return array;
+        
+        return undefined;
+    }
+    map(element3) {
+        let array = this;
+        let array3 = [];
+        for(let i = 0; i < array.length; i++) {
+            element3(array3[i] = array[i]);
+        }
+        return array3;
+    }
+    filter(element4) {
+        let array = this;
+        let filterd =[];
+        for(let i = 0; i < array.length; i++) {
+            if (element4(array[i]))filterd.push(array[i]);
+        }
+        return filterd;
     }
 }
 module.exports = List;
