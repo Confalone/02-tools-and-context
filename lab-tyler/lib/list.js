@@ -39,12 +39,15 @@ class List {
         return undefined;
     }
     map(element3) {
-        let array = this;
-        let array3 = [];
-        for(let i = 0; i < array.length; i++) {
-            element3(array3[i] = array[i]);
+        let mapped = new List;
+        for(let i = 0; i < this.length; i++) {
+            mapped[i] = element3(this[i]);
+            mapped.length++;
         }
-        return array3;
+        if(!element3) {
+            return undefined;
+        }
+        return mapped;
     }
     filter(element4) {
         let array = this;

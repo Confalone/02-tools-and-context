@@ -50,9 +50,6 @@ describe('List Module', () => {
         it(' should return undefined', () => {
 
             let myList = new List();
-            // myList.push('a');
-            // myList.push('b');
-            // myList.push('c');
             myList.forEach();
 
             expect(myList.forEach(element => {
@@ -74,56 +71,90 @@ describe('List Module', () => {
         });
     });
     describe('map()', () => {
-        it(' should return apply a function and return same list', () => {
+        it(' should return apply a function and return a changed list', () => {
             let myList = new List();
             let array3 = new List();
 
             myList.push('1');
             myList.push('2');
             myList.push('3');
-            myList.map(element => {
-                array3.push(element + '.14');
-            });
 
-            expect(myList[2]).toBe('3.14');
-        })
-        it(' should return a changed list and apply a function to each element', () => {
-
-            let myList = new List();
-            let array3 = new List();
-
-            myList.push('1');
-            myList.push('2');
-            myList.push('3');
-            myList.map(element => {
-                array3.push(element + '.14');
-            });
-
-            expect(array3[2].toBe('3.14'))
-
-
-            // let info = myList.map(element => element * 2);
-
-            // expect(info).toBe({'0': 2, '1':4, '2':6, '3':8, 'length':4});
+            let newL = myList.map(element => element * 2);
+            
+        expect(newL).toEqual({ '0': 2, '1': 4, '2': 6, 'length': 3 });
         });
-    });
-    describe('filter()', () => {
-        it(' should return a new array based on function applied', () => {
+
+        })
+        it(' should return same list and apply a function to each element', () => {
 
             let myList = new List();
 
-            myList.push('a');
-            myList.push('b');
+            myList.push('1');
+            myList.push('2');
+            myList.push('3');
+            myList.map(element => element * 2);
+
+        expect(myList[1]).toBe('2');
+        });
+        it(' should return undefined', () => {
+            let myList = new List();
+
+            expect(myList.map('')).toBeUndefined();
+        });
+
+    describe('filter()', () => {
+        it(' should  apply a function and return a new list of items which passed', () => {
+
+        let myList = new List();
+
             myList.push('c');
-            let newestList = myList.filter(element => {
-                return element.length > 1;
+            myList.push('bc');
+            myList.push('ccc');
+
+        let newestList = myList.filter(element => {
+                return element.length == 2;
             });
 
-            expect(newestList[1]).toBe(c);
+            expect(newestList).toEqual(['bc']);
             //  I took b and c from first array;  than choose second indecy from new array for c
         });
-      });
+        it(' array should stay untouched', () => {
+            let myList = new List();
+
+            myList.push(1);
+            myList.push(2);
+            myList.push(3);
+
+            let even = myList.filter(element => element % 2 === 0);
+
+            expect(even).toEqual([2]);
+        })
+        it(' should return undefined', () => {
+            let myList = new List();
+
+            expect(myList.filter('')).toBeUndefined([]);
+        })
+    });
+
 })
+
+    // describe('reduce()', () => {
+    //     it(' should return a new array based on function applied', () => {
+
+    //         let myList = new List();
+
+    //         myList.push('a');
+    //         myList.push('b');
+    //         myList.push('c');
+    //         let newestList = myList.filter(element => {
+    //             return element.length > 1;
+    //         });
+
+    //         expect(newestList[1]).toBe(c);
+    //         //  I took b and c from first array;  than choose second indecy from new array for c
+    //     });
+    // });
+
 
 // //test map
 // let list = new List ('apples','bananas');
