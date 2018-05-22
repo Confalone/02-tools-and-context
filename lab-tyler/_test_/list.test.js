@@ -50,9 +50,9 @@ describe('List Module', () => {
         it(' should return undefined', () => {
 
             let myList = new List();
-            myList.push('a');
-            myList.push('b');
-            myList.push('c');
+            // myList.push('a');
+            // myList.push('b');
+            // myList.push('c');
             myList.forEach();
 
             expect(myList.forEach(element => {
