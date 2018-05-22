@@ -1,4 +1,5 @@
-![cf](https://i.imgur.com/7v5ASc8.png) 02: Tools and Context
+
+![cf](https://travis-ci.com/Confalone/02-tools-and-context.svg?branch=master) 02: Tools and Context
 ======
 
 
