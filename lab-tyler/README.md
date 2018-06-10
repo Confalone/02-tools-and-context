@@ -1,51 +1,20 @@
+[![Build Status](https://travis-ci.com/Confalone/02-tools-and-context.svg?branch=master)](https://travis-ci.com/Confalone/02-tools-and-context) 
 
-![cf](https://travis-ci.com/Confalone/02-tools-and-context.svg?branch=master) 02: Tools and Context
-======
+# 02: Tools and Context
 
+## Modules
 
-## Submission Instructions
-* Work in a fork of this repository
-* Work in a branch on your fork
-* Write all of your code in a directory named `lab-` + `<your name>` **e.g.** `lab-susan`
-* Open a pull request to this repository
-* Submit on canvas a question and observation, how long you spent, and a link to your pull request
+* `push()`
+  ### The push method accepts an element as the parameter.  It adds this element to the end of an array.
 
-## Configuration
-Configure the root of your repository with the following files and directories. Thoughtfully name and organize any additional configuration or module files.
-* **README.md** - contains documentation
-* **.gitignore** - contains a [robust](http://gitignore.io) `.gitignore` file
-* **.eslintrc.json** - contains the course linter configuratoin
-* **.eslintignore** - contains the course linter ignore configuration
-* **.travis.yml** - travis-ci configuration file
-* **package.json** - contains npm package config
-  * create a `lint` script for running eslint
-  * create a `test` script for running tests
-* **lib/** - contains module definitions
-* **\_\_test\_\_/** - contains unit tests
+* `pop()`
+  ### The pop method removes the last element from an array.
 
-## Feature Tasks
+* `forEach()`
+  ### The forEach method iterates through every element in an array. 
 
-#### List Module
-  * implement a List constructor using a constructor, factory, or class
-  * implement the length property
-  * implement `push()`, `pop()` methods on the List prototype
-  * implement `forEach()`, `map()`, `filter()`, and `reduce()` as pure methods on the List prototype
-  * Do not use any built-in array methods to do this
-  
-#### Stretch Goals
-  * implement `slice()`, and `splice()` as methods on the List prototype
-  * implement `shift()`, and `unshift()` as methods on the List prototype
-  * These mutating methods will require you to re-index the list!
+* `map()`
+  ### The map method iterates through and applies a function to each element in an array and returns the mapped array.
 
-## Testing
-Create a NodeJS module in the \_\_test\_\_/ directory named `list.test.js` that asserts the correctness of the list module.
-
-Use the `describe` and `it` (or `test`) methods to define descriptive tests and increase readablity
-Each `it` callback should aim to test a small, well defined, feature of a function - this may include:
-  * tests that ensure the list module functions correctly with error-check parameters
-  * tests that the correct errors are thrown with invalid arguments exist
-  * tests to ensure that the list module functions return the correct results when invoked with valid arguments
-
-##  Documentation
-Include your travis badge at the top of your `README.md` file
-In your `README.md`, describe the exported values of each module you have defined. Every function description should include it's airty (expected number of parameters), the expected data for each parameter (data-type and limitations), and it's behavior (for both valid and invalid use). Feel free to add any additional information in your `README.md` that you would like.
+* `filter()`
+    ### The filter method accepts data and checks if it matches a condition.  If it does than it pushes it into an array to be returned.
